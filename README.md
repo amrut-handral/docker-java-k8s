@@ -3,8 +3,11 @@ Deploying Java Applications with Docker and Kubernetes
 
 # Pre-req:
 Java application
+
 Docker
+
 K8s cluster setup
+
 Maven
 
 # Project consists of basic microservice components with productcatalog, shopfront, and stockmanager.
@@ -46,29 +49,29 @@ docker push your-dockerhub-account/imagename:tag
 6. Reference the Images in Deployment Configuration Files
 Your Kubernetes deployment YAML files (e.g., shopfront-service.yaml) will refer to the Docker image name and tag.
 containers:
-  - name: shopfront
-    image: your-dockerhub-account/shopfront:tag
+name: shopfront
+image: your-dockerhub-account/shopfront:tag
 These YAML files tell Kubernetes how to deploy each microservice.
 
-7. Deploy the Microservices to Kubernetes
+8. Deploy the Microservices to Kubernetes
 Apply each YAML file to create the deployments and services.
 Command:
 kubectl apply -f shopfront-service.yaml
 Repeat this for all other microservices
 
-8. Verify Pod and Deployment Status
+9. Verify Pod and Deployment Status
 Ensure the pods are running and the deployment is successful.
 Command:
 kubectl get pods
 kubectl get deployments
 Look for status like Running and Ready.
 
-9. Fetch the Service URL
+10. Fetch the Service URL
 Use kubectl to get the exposed service details, like IP and port.
 Command:
 kubectl get svc
 If using a LoadBalancer, it will show an external IP. For NodePort, use the node IP and port shown.
 
-10. Access the Application in the Browser
+11. Access the Application in the Browser
 Open your browser and navigate to the service URL you retrieved.
 Example: http://<external-ip>:<port> or http://localhost:<nodeport> depending on your setup.
