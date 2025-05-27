@@ -1,6 +1,8 @@
 # docker-Java-kubernetes-project
 Deploying Java Applications with Docker and Kubernetes
 
+Project consists of basic microservice components with productcatalog, shopfront, and stockmanager.
+
 # Pre-req:
 Java application
 
@@ -9,8 +11,6 @@ Docker
 K8s cluster setup
 
 Maven
-
-# Project consists of basic microservice components with productcatalog, shopfront, and stockmanager.
 
 # Deployment steps
 1. Clone the Code from Git Repository
