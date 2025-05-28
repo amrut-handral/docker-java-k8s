@@ -1,0 +1,33 @@
+kubectl get nodes                          # List all cluster nodes
+kubectl get pods                           # List all pods in the current namespace
+kubectl get pods -A                        # List all pods in all namespaces
+kubectl get deployments                    # List deployments
+kubectl get services                       # List services
+kubectl get namespaces                     # List all namespaces
+kubectl get events                         # List events (recent changes)
+kubectl get hpa                            # List Horizontal Pod Autoscalers
+
+
+kubectl describe pod <pod-name>            # Detailed info about a pod
+kubectl describe deployment <deploy-name>  # Detailed info about a deployment
+kubectl describe node <node-name>          # Detailed node info
+kubectl logs <pod-name>                    # View logs for a pod
+kubectl logs -f <pod-name>                 # Follow pod logs
+kubectl exec -it <pod-name> -- /bin/sh     # Open shell in a pod
+
+
+kubectl create -f <file.yaml>              # Create resource from YAML
+kubectl apply -f <file.yaml>               # Apply/update resource from YAML
+kubectl delete -f <file.yaml>              # Delete resource from YAML
+kubectl delete pod <pod-name>              # Delete a specific pod
+kubectl scale deployment <name> --replicas=3   # Manually scale a deployment
+kubectl rollout restart deployment <name>      # Restart a deployment
+
+kubectl top pods                           # View pod CPU/memory usage (needs metrics server)
+kubectl top nodes                          # View node CPU/memory usage
+kubectl get events --sort-by=.metadata.creationTimestamp  # Recent activity
+
+kubectl config view                        # View kubeconfig settings
+kubectl config get-contexts                # List contexts
+kubectl config use-context <context-name>  # Switch context (cluster)
+kubectl cluster-info                       # Show cluster info
